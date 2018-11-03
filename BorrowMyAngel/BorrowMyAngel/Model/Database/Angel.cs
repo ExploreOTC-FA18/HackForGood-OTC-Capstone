@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BorrowMyAngel.Model.Database
+﻿namespace BorrowMyAngel.Model.Database
 {
     public class Angel
     {
+        public User User { get; set; }
+        public AngelStatus AngelStatus { get; set; }
     }
 }
