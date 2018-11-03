@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BorrowMyAngel.View.MainPage"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    
+    <ContentPage.Resources>
+        <Style x:Key="ButtonNormalStyle" TargetType="Button">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BorderRadius" Value="20" />
+        </Style>
+        <Style x:Key="Divider" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="{StaticResource Muted}" />
+            <Setter Property="HeightRequest" Value="1" />
+            <Setter Property="WidthRequest" Value="200" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0,0,0,0" />
+    </ContentPage.Padding>
+    
+    <AbsoluteLayout>
+    
+        <Image x:Name="backgroundImage"
+               Source="trail_background"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="SizeProportional"
+               Aspect="Fill" />
+        
+        <StackLayout HorizontalOptions="FillAndExpand" 
+                     VerticalOptions="FillAndExpand"
+                     Margin="0,20,0,0"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="SizeProportional">
+            
+            <Image Source="banner" x:Name="banner" HorizontalOptions="Fill" />
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" Padding="50,0">
+                <Button x:Name="btnFindAngel"
+                        Text="Find An Angel" 
+                        BackgroundColor="{StaticResource PrimaryFocus}" 
+                        Style="{StaticResource ButtonNormalStyle}" />
+                <Button x:Name="btnCreateAccount"
+                        Text="Create An Account" 
+                        BackgroundColor="{StaticResource SecondaryFocus}" 
+                        Style="{StaticResource ButtonNormalStyle}" />
+                <Button x:Name="btnLogin"
+                        Text="Login" 
+                        BackgroundColor="{StaticResource SecondaryFocus}" 
+                        Style="{StaticResource ButtonNormalStyle}" />
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </AbsoluteLayout>
+</ContentPage>
