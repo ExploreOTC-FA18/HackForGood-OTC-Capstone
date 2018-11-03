@@ -142,14 +142,30 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\banner.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\banner.imageset\banner.png" />
-    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%402x.png" />
-    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%403x.png" />
-    <ImageAsset Include="Assets.xcassets\trail_background.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background.png" />
-    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%402x.png" />
-    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%403x.png" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
