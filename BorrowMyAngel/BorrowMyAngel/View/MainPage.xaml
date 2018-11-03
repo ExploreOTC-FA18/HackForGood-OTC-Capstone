@@ -50,7 +50,8 @@
                 <Button x:Name="btnLogin"
                         Text="Login" 
                         BackgroundColor="{StaticResource SecondaryFocus}" 
-                        Style="{StaticResource ButtonNormalStyle}" />
+                        Style="{StaticResource ButtonNormalStyle}"
+                        Clicked="LoginClicked" />
             </StackLayout>
             
         </StackLayout>
