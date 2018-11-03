@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BorrowMyAngel.View.AccountCreationScreen">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="Center" Padding="30">
+                    <Label Text="CREATE ACCOUNT"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Email Address"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="email" 
+                           Placeholder=""
+                           MaxLength="200"/>
+                    <Label Text="Password"
+                            HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="password"
+                            Placeholder=""
+                            MaxLength="100"/>
+                    <Label Text=" Re-Enter Password"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="passwordVerify"
+                           Placeholder=""
+                           MaxLength="100"/>
+                    <Label Text="OPTIONAL"
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalTextAlignment="Start"
+                           FontSize="10"
+                           Margin="0,20,0,0"/>
+                    <BoxView 
+                        HeightRequest="1"
+                        BackgroundColor="LightGray">
+                    </BoxView>
+                    <Label Text="First Name"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="firstName"
+                           Placeholder=""
+                           MaxLength="100"/>
+                    <Label Text="NickName"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="nickname"
+                           Placeholder=""
+                           MaxLength="100"/>
+                    <Label Text="Age"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="age"
+                           Placeholder=""
+                           MaxLength="4"/>
+                    <Label Text="Gender"
+                           HorizontalTextAlignment="Center"/>
+                    <Picker x:Name="genderPicker"/>
+                    <Label Text="City"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="city"
+                           Placeholder=""
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="State"
+                           HorizontalTextAlignment="Center"/>
+                    <Picker x:Name="statePicker"/>
+
+                </StackLayout>
+            </ScrollView>
+            <Button
+                Text="Submit"
+                BackgroundColor="Green"
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="Black"
+                VerticalOptions="End"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
