@@ -39,13 +39,16 @@
             
             <Image Source="banner" x:Name="banner" HorizontalOptions="Fill" />
             <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" Padding="50,0">
-                <Button Text="Find An Angel" 
+                <Button x:Name="btnFindAngel"
+                        Text="Find An Angel" 
                         BackgroundColor="{StaticResource PrimaryFocus}" 
                         Style="{StaticResource ButtonNormalStyle}" />
-                <Button Text="Create An Account" 
+                <Button x:Name="btnCreateAccount"
+                        Text="Create An Account" 
                         BackgroundColor="{StaticResource SecondaryFocus}" 
                         Style="{StaticResource ButtonNormalStyle}" />
-                <Button Text="Login" 
+                <Button x:Name="btnLogin"
+                        Text="Login" 
                         BackgroundColor="{StaticResource SecondaryFocus}" 
                         Style="{StaticResource ButtonNormalStyle}" />
             </StackLayout>
