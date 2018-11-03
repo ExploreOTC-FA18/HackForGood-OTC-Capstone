@@ -28,6 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -49,9 +50,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: nickqqqq1@gmail.com (6V4F4YAVU6)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>iOS Team Provisioning Profile: com.NicholasIngram.Borrow-My-Angel</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -140,6 +142,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\banner.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner.png" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%402x.png" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner%403x.png" />
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background.png" />
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%402x.png" />
+    <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -149,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>0.11.0-preview</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -156,5 +169,10 @@
       <Project>{90E9524D-ADD9-46ED-8FB2-D6B58AE22F2E}</Project>
       <Name>BorrowMyAngel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\banner.imageset\" />
+    <Folder Include="Assets.xcassets\banner.imageset\" />
+    <Folder Include="Assets.xcassets\trail_background.imageset\" />
   </ItemGroup>
 </Project>

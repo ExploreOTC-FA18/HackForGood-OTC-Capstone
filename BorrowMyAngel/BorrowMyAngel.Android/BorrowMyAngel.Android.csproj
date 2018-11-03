@@ -55,6 +55,9 @@
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>0.11.0-preview</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -83,6 +86,14 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\banner.png" />
+    <AndroidResource Include="Resources\drawable\banner.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\banner.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\banner.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\trail_background.png" />
+    <AndroidResource Include="Resources\drawable\trail_background.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\trail_background.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\trail_background.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
