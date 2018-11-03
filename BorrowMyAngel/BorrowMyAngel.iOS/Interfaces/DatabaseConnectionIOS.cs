@@ -34,9 +34,18 @@ namespace BorrowMyAngel.iOS.Interfaces
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public Task CreateUser(User user)
+        public async Task CreateUser(User user)
         {
-            throw new System.NotImplementedException();
+            string query = $"insert into Users(UserType, GenderId, Email," +
+                $" Password, Salt, FirstName, Age, City, State)" +
+                $" values({user.UserType.Id}, {user.Gender.Id}, {user.Email}," +
+                $" {user.Password}, {user.Salt}, {user.FirstName}, {user.Age}" +
+                $" {user.City}, {user.State})";
+
+            SqlCommand command = new SqlCommand(query, _sqlConnection);
+
+            await _sqlConnection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
         }
 
         /// <inheiritdoc/>
