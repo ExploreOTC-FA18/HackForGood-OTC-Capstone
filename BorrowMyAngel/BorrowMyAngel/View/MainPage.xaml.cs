@@ -108,6 +108,14 @@ namespace BorrowMyAngel.View
             Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
         }
 
+        void CreateAccountClicked(object sender, System.EventArgs e)
+        {
+            _newScreen = new AccountCreationScreen();
+            _showNewScreen = true;
+            FadeItems(0, 500);
+            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
+        }
+
         private void FadeItems(double opacity, uint length)
         {
             banner.FadeTo(opacity, length);
