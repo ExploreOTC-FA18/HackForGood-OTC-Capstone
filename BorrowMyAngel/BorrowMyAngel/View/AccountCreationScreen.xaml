@@ -9,26 +9,33 @@
                 <StackLayout VerticalOptions="Center" Padding="30">
                     <Label Text="CREATE ACCOUNT"
                         VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand" />
+                        HorizontalOptions="CenterAndExpand" 
+                        TextColor="White"/>
                     <Label Text="Email Address"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Entry x:Name="email" 
                            Placeholder=""
-                           MaxLength="200"/>
+                           MaxLength="200" 
+                           TextColor="White"/>
                     <Label Text="Password"
-                            HorizontalTextAlignment="Start"/>
+                            HorizontalTextAlignment="Start" 
+                            TextColor="White"/>
                     <Entry x:Name="password"
                             Placeholder=""
-                            MaxLength="100"/>
+                            MaxLength="100" 
+                            TextColor="White"/>
                     <Label Text=" Re-Enter Password"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start" 
+                            TextColor="White"/>
                     <Entry x:Name="passwordVerify"
                            Placeholder=""
-                           MaxLength="100"/>
+                           MaxLength="100" 
+                            TextColor="White"/>
                     <Label Text="OPTIONAL"
                            VerticalOptions="CenterAndExpand" 
                            HorizontalTextAlignment="Start"
-                           TextColor="Black"
+                           TextColor="#3E3E42"
                            FontSize="12"
                            Margin="0,20,0,0"/>
                     <BoxView 
@@ -36,32 +43,42 @@
                         BackgroundColor="{StaticResource Muted}">
                     </BoxView>
                     <Label Text="First Name"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start" 
+                           TextColor="White"
+                           Margin="0, 20, 0, 0"/>
                     <Entry x:Name="firstName"
                            Placeholder=""
-                           MaxLength="100"/>
+                           MaxLength="100" 
+                            TextColor="White"/>
                     <Label Text="NickName"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Entry x:Name="nickname"
                            Placeholder=""
-                           MaxLength="100"/>
+                           MaxLength="100"
+                           TextColor="White"/>
                     <Label Text="Age"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Entry x:Name="age"
                            Placeholder=""
-                           MaxLength="4"/>
+                           MaxLength="4"
+                           TextColor="White"/>
                     <Label Text="Gender"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Picker x:Name="genderPicker"/>
                     <Label Text="City"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Entry x:Name="city"
                            Placeholder=""
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Label Text="State"
-                           HorizontalTextAlignment="Start"/>
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
                     <Picker x:Name="statePicker"/>
-
                 </StackLayout>
             </ScrollView>
             <Button
@@ -69,7 +86,8 @@
                 BackgroundColor="{StaticResource PrimaryFocus}"
                 BorderRadius="0"
                 VerticalOptions="End"
-                HorizontalOptions="FillAndExpand"/>
+                HorizontalOptions="FillAndExpand"
+                TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
