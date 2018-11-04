@@ -7,13 +7,15 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Padding="50">
             <Label Text="Email Address"
-                HorizontalTextAlignment="Start"/>
+                HorizontalTextAlignment="Start"
+                   TextColor="White"/>
             <Entry x:Name="email" 
                    Placeholder=""
                    MaxLength="200"/>
             <Label x:Name="password" 
                    Text="Password"
-                   HorizontalTextAlignment="Start"/>
+                   HorizontalTextAlignment="Start"
+                   TextColor="White"/>
             <Entry Placeholder=""
                    IsPassword="True"
                    MaxLength="100"/>
@@ -25,7 +27,7 @@
                 Clicked="SubmitClicked" />
             <Button Text="Forgot Password?"
                     BackgroundColor="{StaticResource BackgroundColor}"
-                    TextColor="Black"
+                    TextColor="White"
                     HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>

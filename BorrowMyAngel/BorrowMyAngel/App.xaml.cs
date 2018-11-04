@@ -25,8 +25,6 @@ namespace BorrowMyAngel
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-            TCPClient.Stop();
-            TCPServer.Stop();
         }
 
         protected override void OnResume()

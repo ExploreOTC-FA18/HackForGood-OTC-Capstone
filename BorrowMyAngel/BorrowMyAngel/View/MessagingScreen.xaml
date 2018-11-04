@@ -9,8 +9,8 @@
     </ContentPage.Padding>
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Muted}">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
                 <Button BackgroundColor="White" 
                         Text="Back" 
                         FontSize="20" 
@@ -23,14 +23,14 @@
                        VerticalTextAlignment="Center"
                        FontSize="25" FontAttributes="Bold" />
             </StackLayout>
-            <ScrollView VerticalOptions="CenterAndExpand">
+            <ScrollView x:Name="scrollMessages" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
                 <StackLayout x:Name="layoutMessages" 
-                             VerticalOptions="EndAndExpand" 
-                             BackgroundColor="{StaticResource Muted}" />
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="FillAndExpand"/>
             </ScrollView>
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="entryMessage" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Send" Clicked="SendMessage" />
+            <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                <Entry x:Name="entryMessage" Placeholder="Enter Message..." VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="btnSend" Text="Send" Clicked="SendMessage" Margin="10" BackgroundColor="{StaticResource PrimaryFocus}" TextColor="White" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
