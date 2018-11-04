@@ -103,17 +103,19 @@ namespace BorrowMyAngel.View
         void LoginClicked(object sender, System.EventArgs e)
         {
             _newScreen = new LoginScreen();
-            _showNewScreen = true;
-            FadeItems(0, 500);
-            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
+            SetUpScreenTransition();
+        }
+
+        void FindAngelClicked(object sender, System.EventArgs e)
+        {
+            _newScreen = new ConnectionScreen();
+            SetUpScreenTransition();
         }
 
         void CreateAccountClicked(object sender, System.EventArgs e)
         {
             _newScreen = new AccountCreationScreen();
-            _showNewScreen = true;
-            FadeItems(0, 500);
-            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
+            SetUpScreenTransition();
         }
 
         private void FadeItems(double opacity, uint length)
@@ -122,6 +124,13 @@ namespace BorrowMyAngel.View
             btnFindAngel.FadeTo(opacity, length);
             btnCreateAccount.FadeTo(opacity, length);
             btnLogin.FadeTo(opacity, length);
+        }
+
+        private void SetUpScreenTransition()
+        {
+            _showNewScreen = true;
+            FadeItems(0, 500);
+            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
         }
 
         private void AnimateBackgroundImage(double scaleStart, double scaleEnd, double translationStart, double translationEnd, double startTime, double endTime, uint length)
