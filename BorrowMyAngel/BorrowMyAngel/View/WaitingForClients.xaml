@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BorrowMyAngel.View.WaitingForClients">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Label x:Name="lblWaiting" Text="Waiting for clients" FontSize="25" />
+        <Button x:Name="btnAccept" Text="Accept Client" BackgroundColor="{StaticResource PrimaryFocus}" IsVisible="false" Clicked="AcceptClient" />
+        <Button x:Name="btnDecline" Text="Decline Client" BackgroundColor="{StaticResource SecondaryFocus}" IsVisible="false" Clicked="DeclineClient" />
+    </StackLayout>
+</ContentPage>

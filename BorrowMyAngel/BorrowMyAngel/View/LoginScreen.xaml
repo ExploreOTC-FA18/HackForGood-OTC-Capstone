@@ -8,9 +8,11 @@
         <StackLayout VerticalOptions="Center" Padding="50">
             <Label Text="Email Address"
                 HorizontalTextAlignment="Start"/>
-            <Entry Placeholder=""
+            <Entry x:Name="email" 
+                   Placeholder=""
                    MaxLength="200"/>
-            <Label Text="Password"
+            <Label x:Name="password" 
+                   Text="Password"
                    HorizontalTextAlignment="Start"/>
             <Entry Placeholder=""
                    IsPassword="True"
@@ -19,12 +21,12 @@
                 Text="Login"
                 BackgroundColor="{StaticResource PrimaryFocus}"
                 HorizontalOptions="FillAndExpand"
-                TextColor="White"/>
-            <Button
-                Text="Forgot Password?"
-                BackgroundColor="{StaticResource BackgroundColor}"
-                TextColor="Black"
-                HorizontalOptions="FillAndExpand"/>
+                TextColor="White"
+                Clicked="SubmitClicked" />
+            <Button Text="Forgot Password?"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
