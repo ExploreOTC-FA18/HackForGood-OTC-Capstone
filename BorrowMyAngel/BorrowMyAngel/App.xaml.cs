@@ -12,7 +12,7 @@ namespace BorrowMyAngel
         {
             InitializeComponent();
 
-            MainPage = new MessagingScreen();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
