@@ -26,6 +26,15 @@ namespace BorrowMyAngel.Server
             _serverThread.Start();
         }
 
+        static public void Stop()
+        {
+            if (_serverThread != null && _serverThread.IsAlive)
+            {
+                _serverThread.Abort();
+                _listener.Stop();
+            }
+        }
+
         static public void SendMessage(string message)
         {
             byte[] bytesToSend = Encoding.ASCII.GetBytes(message);
@@ -38,7 +47,7 @@ namespace BorrowMyAngel.Server
             {
                 _client = _listener.AcceptTcpClient();  //if a connection exists, the server will accept it
 
-                while (_client.Connected)  //while the client is connected, we look for incoming messages
+                while (_client.Connected && _serverThread.IsAlive)  //while the client is connected, we look for incoming messages
                 {
                     if (!_doOnce)
                     {
@@ -49,9 +58,10 @@ namespace BorrowMyAngel.Server
                     byte[] bytesToRead = new byte[_client.ReceiveBufferSize];
                     int bytesRead = _client.GetStream().Read(bytesToRead, 0, _client.ReceiveBufferSize);
                     string messageReceived = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
-                    //TODO Send the messages we receive to the chat messanger
                     MessageReceived(messageReceived);
                 }
+
+                _client.Close();
             }
         }
     }

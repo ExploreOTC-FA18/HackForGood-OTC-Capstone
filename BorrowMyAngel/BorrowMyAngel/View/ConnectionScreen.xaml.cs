@@ -27,6 +27,14 @@ namespace BorrowMyAngel.View
 
             NavigationPage.SetHasNavigationBar(this, false);
 
+            _origCircleScale = btnWaiting.Scale;
+            _endScale = _origCircleScale + 0.5;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
             TCPClient.Start();
             TCPClient.ReceivedMessage += (obj) => {
                 Device.BeginInvokeOnMainThread(() =>
@@ -42,14 +50,6 @@ namespace BorrowMyAngel.View
                     }
                 });
             };
-
-            _origCircleScale = btnWaiting.Scale;
-            _endScale = _origCircleScale + 0.5;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
 
             Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
         }

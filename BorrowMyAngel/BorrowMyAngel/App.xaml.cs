@@ -1,4 +1,6 @@
-﻿using BorrowMyAngel.View;
+﻿using BorrowMyAngel.Client;
+using BorrowMyAngel.Server;
+using BorrowMyAngel.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

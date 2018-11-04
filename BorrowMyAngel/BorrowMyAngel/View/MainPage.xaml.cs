@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using BorrowMyAngel.Client;
+using BorrowMyAngel.Server;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -26,6 +28,11 @@ namespace BorrowMyAngel.View
         {
             base.OnAppearing();
 
+            //Just incase the user is coming from somwhere that would have the
+            //  server/client being ran let's shut that off
+            TCPClient.Stop();
+            TCPServer.Stop();
+
             //When the page loads let's find out what the size of the banner
             //  should be. We want it to always be 1/16th of the current screen
             //  size.
@@ -51,7 +58,7 @@ namespace BorrowMyAngel.View
             AnimateBackgroundImage(backgroundImage.Scale, 
                                    _origBackgroundScale, 
                                    backgroundImage.TranslationY, 
-                                   _origBackgroundPosY, 0, 1, 1500);
+                                   _origBackgroundPosY, 0, 1);
         }
 
         private bool Update()
@@ -86,7 +93,7 @@ namespace BorrowMyAngel.View
                                                backgroundImage.Scale + 20,
                                                _origBackgroundPosY,
                                                backgroundImage.TranslationY + 1800,
-                                               0, 1, 1500);
+                                               0, 1);
                     }
                     else if (backgroundImage.Scale >= _origBackgroundScale + 20)
                     {
@@ -133,7 +140,7 @@ namespace BorrowMyAngel.View
             Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
         }
 
-        private void AnimateBackgroundImage(double scaleStart, double scaleEnd, double translationStart, double translationEnd, double startTime, double endTime, uint length)
+        private void AnimateBackgroundImage(double scaleStart, double scaleEnd, double translationStart, double translationEnd, double startTime, double endTime)
         {
             var backgroundImageAnim = new Animation();
             var scale = new Animation(callback: d => backgroundImage.Scale = d,
@@ -149,7 +156,7 @@ namespace BorrowMyAngel.View
             backgroundImageAnim.Add(startTime, endTime, scale);
             backgroundImageAnim.Add(startTime, endTime, translation);
             //Finally commit the animation to begin the animation
-            backgroundImageAnim.Commit(backgroundImage, "backgroundImageAnim", length);
+            backgroundImageAnim.Commit(backgroundImage, "backgroundImageAnim", length: 1200);
         }
     }
 }
