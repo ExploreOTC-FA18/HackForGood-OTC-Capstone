@@ -14,7 +14,7 @@ namespace BorrowMyAngel.Client
 
         public static void Start()
         {
-            _client = new TcpClient("10.12.69.183", 9999);
+            _client = new TcpClient("10.12.69.165", 9999);
 
             _clientThread = new Thread(RunThread);
             _clientThread.Start();

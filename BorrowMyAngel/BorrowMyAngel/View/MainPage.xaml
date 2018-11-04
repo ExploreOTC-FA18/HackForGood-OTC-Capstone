@@ -58,5 +58,10 @@
             
         </StackLayout>
         
+        <Button Image="copyright" 
+                AbsoluteLayout.LayoutBounds="1,0,20,20" 
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="AttributionClicked"/>
+        
     </AbsoluteLayout>
 </ContentPage>
