@@ -34,17 +34,52 @@ namespace BorrowMyAngel.View
             }
         }
 
-        void BackButtonPressed(object sender, System.EventArgs e)
+        async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            var result = await DisplayAlert("Alert",
+                                           "You are about to leave the chat and " +
+                                            "will not be able to return. Are you " +
+                                            "sure you wish to disconnect yourself " +
+                                            "and the other person?",
+                                            "Yes", "No");
+
+            if (result)
+            {
+                if (_role.Equals("client"))
+                    TCPClient.SendMessage("!DISCONNECT");
+                else
+                    TCPServer.SendMessage("!DISCONNECT");
+
+                CloseChat();
+            }
         }
 
-        private void MessageReceived(string message)
+        //Dont allow the user to press the back button on their device. They 
+        //  can only tap the one provided on the page
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
+        }
+
+        void CloseChat()
+        {
+            if (_role.Equals("client"))
+                TCPClient.Stop();
+            else
+                TCPServer.Stop();
+
+            Navigation.PopToRootAsync();
+        }
+
+        void MessageReceived(string message)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                //Append a message box into the scrollview
-                CreateMessageBox(message);
+                if (message.Equals("!DISCONNECT"))
+                    CloseChat();
+                else
+                    //Append a message box into the scrollview
+                    CreateMessageBox(message);
             });
         }
 

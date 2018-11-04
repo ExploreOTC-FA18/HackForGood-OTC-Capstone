@@ -11,9 +11,17 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Button BackgroundColor="White" Text="Back" Clicked="BackButtonPressed" HorizontalOptions="Start" FontSize="25" />
-                <Label x:Name="lblTitle" Text="Your Angel" HorizontalOptions="CenterAndExpand" 
-                       FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Button BackgroundColor="White" 
+                        Text="Back" 
+                        FontSize="20" 
+                        HorizontalOptions="Start"
+                        Clicked="Handle_Clicked"
+                        Margin="20,0,0,0"/>
+                <Label x:Name="lblTitle" Text="Your Angel" 
+                       HorizontalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="25" FontAttributes="Bold" />
             </StackLayout>
             <ScrollView VerticalOptions="CenterAndExpand">
                 <StackLayout x:Name="layoutMessages" 

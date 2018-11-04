@@ -20,6 +20,12 @@ namespace BorrowMyAngel.Client
             _clientThread.Start();
         }
 
+        static public void Stop()
+        {
+            if (_clientThread != null && _clientThread.IsAlive)
+                _clientThread.Abort();
+        }
+
         public static void SendMessage(string message)
         {
             byte[] bytesToSend = Encoding.ASCII.GetBytes(message);
@@ -28,13 +34,14 @@ namespace BorrowMyAngel.Client
 
         private static void RunThread()
         {
-            while (_client.Connected)
+            while (_client.Connected && _clientThread.IsAlive)
             {
                 byte[] bytesToRead = new byte[_client.ReceiveBufferSize];
                 int bytesRead = _client.GetStream().Read(bytesToRead, 0, _client.ReceiveBufferSize);
                 string messageReceived = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
                 ReceivedMessage(messageReceived);
             }
+            _client.Close();
         }
     }
 }
