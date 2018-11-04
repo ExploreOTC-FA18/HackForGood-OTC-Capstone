@@ -95,6 +95,10 @@
     <AndroidResource Include="Resources\drawable\trail_background.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\trail_background.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\trail_background.png" />
+    <AndroidResource Include="Resources\drawable\copyright.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\copyright.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\copyright.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\copyright.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\HamburgerMenu.png" />

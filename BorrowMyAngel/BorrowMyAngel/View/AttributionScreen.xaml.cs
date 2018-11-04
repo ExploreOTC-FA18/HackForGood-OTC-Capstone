@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BorrowMyAngel
+namespace BorrowMyAngel.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AttributionScreen : ContentPage

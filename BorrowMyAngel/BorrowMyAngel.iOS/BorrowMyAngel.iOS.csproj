@@ -167,6 +167,10 @@
     <ImageAsset Include="Assets.xcassets\trail_background.imageset\trail_background%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\copyright.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\copyright.imageset\copyright.png" />
+    <ImageAsset Include="Assets.xcassets\copyright.imageset\copyright%402x.png" />
+    <ImageAsset Include="Assets.xcassets\copyright.imageset\copyright%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -191,4 +195,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\copyright.imageset\" />
+  </ItemGroup>
 </Project>

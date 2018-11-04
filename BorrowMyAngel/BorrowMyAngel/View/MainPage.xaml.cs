@@ -125,6 +125,12 @@ namespace BorrowMyAngel.View
             SetUpScreenTransition();
         }
 
+        void AttributionClicked(object sender, System.EventArgs e)
+        {
+            _newScreen = new AttributionScreen();
+            SetUpScreenTransition();
+        }
+
         private void FadeItems(double opacity, uint length)
         {
             banner.FadeTo(opacity, length);
