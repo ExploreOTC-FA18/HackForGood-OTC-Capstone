@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BorrowMyAngel.Client;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,6 +26,22 @@ namespace BorrowMyAngel.View
             AbsoluteLayout.SetLayoutBounds(lblWaiting, new Rectangle(0.5, 0.5, halfOfScreenWidth - 20, halfOfScreenWidth));
 
             NavigationPage.SetHasNavigationBar(this, false);
+
+            TCPClient.Start();
+            TCPClient.ReceivedMessage += (obj) => {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    if ((obj as string).Equals("!ACCEPT"))
+                    {
+                        Navigation.PushAsync(new MessagingScreen("client"));
+                    }
+                    else
+                    {
+                        //TODO Tell the client that there's no angels
+                        Navigation.PopAsync();
+                    }
+                });
+            };
 
             _origCircleScale = btnWaiting.Scale;
             _endScale = _origCircleScale + 0.5;
