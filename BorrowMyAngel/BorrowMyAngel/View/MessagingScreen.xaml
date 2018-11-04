@@ -2,22 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BorrowMyAngel.View.MessagingScreen">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0,0,0,0" />
+    </ContentPage.Padding>
+    
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" 
-                         Padding="10" 
-                         BackgroundColor="#3a3a3a"
-                         VerticalOptions="Start">
-                <Button Image="HamburgerMenu.png" 
-                        WidthRequest="48" 
-                        HeightRequest="48"/>
-                <Label Text="Your Angel" FontSize="20" TextColor="#ededed"
-                       Margin="0, 10, 0, 0"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button BackgroundColor="White" Text="Back" Clicked="BackButtonPressed" HorizontalOptions="Start" FontSize="25" />
+                <Label x:Name="lblTitle" Text="Your Angel" HorizontalOptions="CenterAndExpand" 
+                       FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             </StackLayout>
             <ScrollView VerticalOptions="CenterAndExpand">
-                <StackLayout x:Name="layoutMessages" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource Muted}">
-                    
-                </StackLayout>
+                <StackLayout x:Name="layoutMessages" 
+                             VerticalOptions="EndAndExpand" 
+                             BackgroundColor="{StaticResource Muted}" />
             </ScrollView>
             <StackLayout Orientation="Horizontal">
                 <Entry x:Name="entryMessage" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>

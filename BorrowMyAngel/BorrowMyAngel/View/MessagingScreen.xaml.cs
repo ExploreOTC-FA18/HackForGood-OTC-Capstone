@@ -19,6 +19,8 @@ namespace BorrowMyAngel.View
 		{
 			InitializeComponent ();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
             _role = role;
 
             if (_role.Equals("client"))
@@ -28,8 +30,14 @@ namespace BorrowMyAngel.View
             else
             {
                 TCPServer.MessageReceived = MessageReceived;
+                lblTitle.Text = "Person In Need";
             }
-		}
+        }
+
+        void BackButtonPressed(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void MessageReceived(string message)
         {
