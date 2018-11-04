@@ -11,7 +11,7 @@ namespace BorrowMyAngel
         public App()
         {
             InitializeComponent();
-
+            
             MainPage = new MainPage();
         }
 

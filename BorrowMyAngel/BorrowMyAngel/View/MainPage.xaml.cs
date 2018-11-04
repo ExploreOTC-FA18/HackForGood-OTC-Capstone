@@ -9,10 +9,17 @@ namespace BorrowMyAngel.View
     {
         private double _origBackgroundScale;
         private double _origBackgroundPosY;
+        private bool _showNewScreen;
+        private Page _newScreen;
 
         public MainPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            _origBackgroundScale = backgroundImage.Scale;
+            _origBackgroundPosY = backgroundImage.TranslationY;
         }
 
         protected override void OnAppearing()
@@ -30,9 +37,6 @@ namespace BorrowMyAngel.View
 
             //Set up the initial position, scale, and opacity for all the views
             //  that will be animated
-            _origBackgroundScale = backgroundImage.Scale;
-            _origBackgroundPosY = backgroundImage.TranslationY;
-            //backgroundImage.Opacity = 0;
             backgroundImage.Scale = backgroundImage.Scale + 20;
             backgroundImage.TranslationY = backgroundImage.TranslationY + 1800;
 
@@ -44,47 +48,99 @@ namespace BorrowMyAngel.View
             //When the view first appears we need to animate the background image
             //  to get all the other animations rolling
             //First set up the main animation handler
-            var backgroundImageAnim = new Animation();
-            var scale = new Animation(callback: d => backgroundImage.Scale = d,
-                                      start: backgroundImage.Scale,
-                                      end: _origBackgroundScale);
-            var translation = new Animation(callback: d => backgroundImage.TranslationY = d,
-                                            start: backgroundImage.TranslationY,
-                                            end: _origBackgroundPosY);
-
-            //Add the scaling and translation animation. these animations will 
-            //  start 20% into the animation (0.2) and will last until the end 
-            //  of the animation time (1)
-            backgroundImageAnim.Add(0, 1, scale);
-            backgroundImageAnim.Add(0, 1, translation);
-            //Finally commit the animation to begin the animation
-            backgroundImageAnim.Commit(backgroundImage, "backgroundImageAnim", length: 1500);
+            AnimateBackgroundImage(backgroundImage.Scale, 
+                                   _origBackgroundScale, 
+                                   backgroundImage.TranslationY, 
+                                   _origBackgroundPosY, 0, 1, 1500);
         }
 
         private bool Update()
         {
             //The first thing we need to check the state of is if the background
             //  image has finished animating
-            if (backgroundImage.Scale <= _origBackgroundScale)
+            if (!_showNewScreen)
             {
-                //Now that the background image has been animated we then animate
-                //  the banner and buttons
-                if (banner.Opacity <= 0)
+                if (backgroundImage.Scale <= _origBackgroundScale)
                 {
-                    banner.FadeTo(1, 1000);
-                    btnFindAngel.FadeTo(1, 1000);
-                    btnCreateAccount.FadeTo(1, 1000);
-                    btnLogin.FadeTo(1, 1000);
+                    //Now that the background image has been animated we then animate
+                    //  the banner and buttons
+                    if (banner.Opacity <= 0)
+                    {
+                        FadeItems(1, 1000);
+                    }
+                    else if (banner.Opacity >= 0.99)
+                    {
+                        //All the animations are complete so return false to stop 
+                        //  the timer.
+                        return false;
+                    }
                 }
-                else if (banner.Opacity >= 0.99)
+            }
+            else
+            {
+                if (banner.Opacity <= 0.01)
                 {
-                    //All the animations are complete so return false to stop 
-                    //  the timer.
-                    return false;
+                    if (backgroundImage.Scale <= _origBackgroundScale)
+                    {
+                        AnimateBackgroundImage(_origBackgroundScale,
+                                               backgroundImage.Scale + 20,
+                                               _origBackgroundPosY,
+                                               backgroundImage.TranslationY + 1800,
+                                               0, 1, 1500);
+                    }
+                    else if (backgroundImage.Scale >= _origBackgroundScale + 20)
+                    {
+                        Navigation.PushAsync(_newScreen);
+                        _showNewScreen = false;
+                        return false;
+                    }
                 }
             }
 
             return true;
+        }
+
+        void LoginClicked(object sender, System.EventArgs e)
+        {
+            _newScreen = new LoginScreen();
+            _showNewScreen = true;
+            FadeItems(0, 500);
+            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
+        }
+
+        void CreateAccountClicked(object sender, System.EventArgs e)
+        {
+            _newScreen = new AccountCreationScreen();
+            _showNewScreen = true;
+            FadeItems(0, 500);
+            Device.StartTimer(TimeSpan.FromMilliseconds(1), Update);
+        }
+
+        private void FadeItems(double opacity, uint length)
+        {
+            banner.FadeTo(opacity, length);
+            btnFindAngel.FadeTo(opacity, length);
+            btnCreateAccount.FadeTo(opacity, length);
+            btnLogin.FadeTo(opacity, length);
+        }
+
+        private void AnimateBackgroundImage(double scaleStart, double scaleEnd, double translationStart, double translationEnd, double startTime, double endTime, uint length)
+        {
+            var backgroundImageAnim = new Animation();
+            var scale = new Animation(callback: d => backgroundImage.Scale = d,
+                                      start: scaleStart,
+                                      end: scaleEnd);
+            var translation = new Animation(callback: d => backgroundImage.TranslationY = d,
+                                            start: translationStart,
+                                            end: translationEnd);
+
+            //Add the scaling and translation animation. these animations will 
+            //  start 20% into the animation (0.2) and will last until the end 
+            //  of the animation time (1)
+            backgroundImageAnim.Add(startTime, endTime, scale);
+            backgroundImageAnim.Add(startTime, endTime, translation);
+            //Finally commit the animation to begin the animation
+            backgroundImageAnim.Commit(backgroundImage, "backgroundImageAnim", length);
         }
     }
 }

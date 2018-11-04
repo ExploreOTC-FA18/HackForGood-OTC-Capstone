@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BorrowMyAngel.View.AngelAccountScreen">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="50">
+            <Label Text="Angel Status"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   Margin="0,0,0,50"/>
+            <Button
+                Text="I'm Available"
+                BackgroundColor="White"
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="FillAndExpand"/>
+            <Button
+                Text="I'm Unavailable"
+                BackgroundColor="White"
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="FillAndExpand"/>
+            <Button
+                Text="Do Not Disturb"
+                BackgroundColor="White"
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
