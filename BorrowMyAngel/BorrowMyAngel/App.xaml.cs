@@ -11,8 +11,7 @@ namespace BorrowMyAngel
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new WaitingForClients());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
