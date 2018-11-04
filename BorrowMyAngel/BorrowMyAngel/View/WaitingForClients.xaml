@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BorrowMyAngel.View.WaitingForClients">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BorrowMyAngel.View.WaitingForClients" BackgroundColor="{StaticResource BackgroundColor}">
     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-        <Label x:Name="lblWaiting" Text="Waiting for clients" FontSize="25" />
-        <Button x:Name="btnAccept" Text="Accept Client" BackgroundColor="{StaticResource PrimaryFocus}" IsVisible="false" Clicked="AcceptClient" />
-        <Button x:Name="btnDecline" Text="Decline Client" BackgroundColor="{StaticResource SecondaryFocus}" IsVisible="false" Clicked="DeclineClient" />
+        <ContentView Padding="20, 0, 20, 10">
+            <Label TextColor="#F0F0F0" HorizontalTextAlignment="Center" x:Name="lblWaiting" Text="Waiting for clients..." FontSize="25" />
+        </ContentView>
+        <Button x:Name="btnAccept" Text="Accept" 
+                BackgroundColor="{StaticResource PrimaryFocus}" 
+                IsVisible="false"
+                Clicked="AcceptClient" 
+                TextColor="#F0F0F0"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                BorderRadius="20"/>
+        <Button x:Name="btnDecline" 
+                Text="Decline" 
+                BackgroundColor="{StaticResource SecondaryFocus}" 
+                IsVisible="false" Clicked="DeclineClient" 
+                TextColor="#F0F0F0"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                BorderRadius="20"/>
     </StackLayout>
 </ContentPage>

@@ -11,7 +11,6 @@ namespace BorrowMyAngel
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
         }
 

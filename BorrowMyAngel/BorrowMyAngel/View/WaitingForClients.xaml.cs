@@ -24,7 +24,7 @@ namespace BorrowMyAngel.View
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                lblWaiting.IsVisible = false;
+                lblWaiting.Text = "Someone in need is trying to connect. Would you like to talk to them?";
                 btnAccept.IsVisible = true;
                 btnDecline.IsVisible = true;
             });

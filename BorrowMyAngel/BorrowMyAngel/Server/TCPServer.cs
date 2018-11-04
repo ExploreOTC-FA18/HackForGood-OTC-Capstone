@@ -19,7 +19,7 @@ namespace BorrowMyAngel.Server
         static public void Start()
         {
             IPAddress localAdd = IPAddress.Parse("10.12.69.183");
-            _listener = new TcpListener(localAdd, 9999);
+            _listener = new TcpListener(IPAddress.Any, 9999);
             _listener.Start();
 
             _serverThread = new Thread(RunThread);
