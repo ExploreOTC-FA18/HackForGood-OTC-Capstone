@@ -17,6 +17,8 @@
     <Folder Include="Model\" />
     <Folder Include="Model\Database\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Server\" />
+    <Folder Include="Client\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Model\Database\APIKeys.cs.default" />
@@ -26,11 +28,25 @@
     <None Include="Model\Database\APIKeys.cs.default" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\MessagingScreen.xaml.cs">
+      <DependentUpon>MessagingScreen.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="View\AccountCreationScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AngelAccountScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\LoginScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

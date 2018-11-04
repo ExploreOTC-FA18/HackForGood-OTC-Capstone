@@ -16,5 +16,13 @@ namespace BorrowMyAngel.View
         {
             InitializeComponent();
         }
+
+        void SubmitClicked(object sender, System.EventArgs e)
+        {
+            if (email.Text.ToLower().Equals("angel@hotmail.com") && password.Text.ToLower().Equals("password"))
+            {
+                Navigation.PushAsync(new WaitingForClients());
+            }
+        }
     }
 }

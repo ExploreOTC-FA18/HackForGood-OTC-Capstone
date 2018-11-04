@@ -42,15 +42,18 @@
                 <Button x:Name="btnFindAngel"
                         Text="Find An Angel" 
                         BackgroundColor="{StaticResource PrimaryFocus}" 
-                        Style="{StaticResource ButtonNormalStyle}" />
+                        Style="{StaticResource ButtonNormalStyle}"
+                        Clicked="FindAngelClicked"/>
                 <Button x:Name="btnCreateAccount"
                         Text="Create An Account" 
                         BackgroundColor="{StaticResource SecondaryFocus}" 
-                        Style="{StaticResource ButtonNormalStyle}" />
+                        Style="{StaticResource ButtonNormalStyle}"
+                        Clicked="CreateAccountClicked"/>
                 <Button x:Name="btnLogin"
                         Text="Login" 
                         BackgroundColor="{StaticResource SecondaryFocus}" 
-                        Style="{StaticResource ButtonNormalStyle}" />
+                        Style="{StaticResource ButtonNormalStyle}"
+                        Clicked="LoginClicked" />
             </StackLayout>
             
         </StackLayout>

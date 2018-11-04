@@ -6,5 +6,10 @@ namespace BorrowMyAngel.Model.Database
         //Make sure to rename this file to APIKeys.cs instead of APIKeys.cs.default
         //  and replace all the strings with the needed values. This way
         //  it wont be uploaded to github.
+        public static string ConnectionString = "Data Source=;" +
+               "Initial Catalog Name=BorrowMyAngel;" +
+               "Persist Security Info=True;" +
+               "User ID=;" +
+               "Password=";
     }
 }

@@ -12,7 +12,7 @@ namespace BorrowMyAngel
         {
             InitializeComponent();
 
-            MainPage = new LoginScreen();
+            MainPage = new NavigationPage(new WaitingForClients());
         }
 
         protected override void OnStart()

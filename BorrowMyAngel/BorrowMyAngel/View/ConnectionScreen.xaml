@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:WrapButton="clr-namespace:BorrowMyAngel.Interfaces"
+             x:Class="BorrowMyAngel.View.ConnectionScreen"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Button x:Name="btnWaiting"
+                    InputTransparent="true"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" 
+                    BackgroundColor="{StaticResource PrimaryFocus}"/>
+            <Label x:Name="lblWaiting" 
+                   Text="Finding an Angel"
+                   FontSize="25"
+                   TextColor="White"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
