@@ -23,9 +23,6 @@
     <Compile Remove="View\MyPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Model\Database\APIKeys.cs.default" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="View\AccountCreationScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
